@@ -4,7 +4,7 @@
     "Akash Srivastava <vyomsrivastav@gmail.com>"
   ],
   "description": "Library to map complex rest endpoints",
-  "main": "pg-resource.js",
+  "main": "./pg-resource.js",
   "keywords": [
     "Angular",
     "Rest",
