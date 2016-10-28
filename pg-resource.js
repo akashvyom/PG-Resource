@@ -12,7 +12,7 @@
 				var finalUrlC = url.trim();
 				var resturl = (url.trim()).split("/");
 				var urlValue = [];
-				for(partialUrl in resturl){
+				for(var partialUrl in resturl){
 					if(resturl[partialUrl].search(":")!=-1){
 						urlValue.push(resturl[partialUrl].replace(":",""));
 					}
