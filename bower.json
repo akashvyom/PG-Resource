@@ -1,0 +1,27 @@
+{
+  "name": "pg-resource",
+  "authors": [
+    "Akash Srivastava <vyomsrivastav@gmail.com>"
+  ],
+  "description": "Library to map complex rest endpoints",
+  "main": "pg-resource.js",
+  "keywords": [
+    "Angular",
+    "Rest",
+    "Rest",
+    "Library",
+    "Resource",
+    "RestFul",
+    "Api",
+    "$http"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
