@@ -21,7 +21,7 @@
 				//function to map the data to url
 				function buildUrl(data){
 					var finalUrl = finalUrlC;
-					for(k in urlValue){
+					for(var k in urlValue){
 						if(data[urlValue[k]]){
 							var d = (":"+urlValue[k]).trim();
 							finalUrl= finalUrl.replace(d,data[urlValue[k]]);
@@ -41,7 +41,7 @@
 					
 					keys = keys.split(":");
 					var qString = "?";
-					for(x in keys){
+					for(var x in keys){
 						if(x==0){qString = qString+ keys[x]+"=" + qData[keys[x]];}
 						else{qString = qString + "&" + keys[x] +"="+ qData[keys[x]];}
 					}
