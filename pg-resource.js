@@ -5,9 +5,13 @@
 	.service('ApiConfig',[function(){
 		this.baseUrl = "";
 	}])
-	.factory('Resource',['$http','$q',function($http,$q){
+	.factory('Resource',['$http','$q','ApiConfig',function($http,$q,'ApiConfig'){
 		return{
-			create: function(url){
+			create: function(url,withBase){
+				//Default Initialize as true
+				if(typeof withBase "undefined"){
+					withBase = true;
+				}
 				//break the url in array at every /(backlash)
 				var finalUrlC = url.trim();
 				var resturl = (url.trim()).split("/");
@@ -28,6 +32,9 @@
 						}
 					}
 					finalUrl= finalUrl.replace(":id","");
+					if(withBase){
+						finalUrl = ApiConfig.baseUrl + finalUrl; 
+					}
 					return finalUrl;
 					
 				}
@@ -45,7 +52,9 @@
 						if(x==0){qString = qString+ keys[x]+"=" + qData[keys[x]];}
 						else{qString = qString + "&" + keys[x] +"="+ qData[keys[x]];}
 					}
-					//console.log(qUrl+qString);
+					if(withBase){
+						finalUrl = ApiConfig.baseUrl + qUrl + qString; 
+					}
 					return qUrl+qString;
 				}
 				
