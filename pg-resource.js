@@ -9,7 +9,7 @@
 		return{
 			create: function(url,withBase){
 				//Default Initialize as true
-				if(typeof withBase "undefined"){
+				if(typeof withBase == "undefined"){
 					withBase = true;
 				}
 				//break the url in array at every /(backlash)
