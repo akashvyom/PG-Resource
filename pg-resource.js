@@ -5,7 +5,7 @@
 	.service('ApiConfig',[function(){
 		this.baseUrl = "";
 	}])
-	.factory('Resource',['$http','$q','ApiConfig',function($http,$q,'ApiConfig'){
+	.factory('Resource',['$http','$q','ApiConfig',function($http,$q,ApiConfig){
 		return{
 			create: function(url,withBase){
 				//Default Initialize as true
