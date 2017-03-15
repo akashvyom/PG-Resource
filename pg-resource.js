@@ -41,6 +41,7 @@
 				
 				//function to map the qdata and urldata to url with query to be used in get methods
 				function buildqUrl(urlData,qData){
+					var finalUrl = "";
 					var qUrl = buildUrl(urlData);
 					if(!qData){return qUrl;}
 					var keys = Object.keys(qData);
@@ -49,10 +50,11 @@
 						if(x==0){qString = qString+ keys[x]+"=" + qData[keys[x]];}
 						else{qString = qString + "&" + keys[x] +"="+ qData[keys[x]];}
 					}
+					finalUrl = qUrl + qString;
 					if(withBase){
-						finalUrl = ApiConfig.baseUrl + qUrl + qString; 
+						finalUrl = ApiConfig.baseUrl + finalUrl;
 					}
-					return qUrl+qString;
+					return finalUrl;
 				}
 				
 				
