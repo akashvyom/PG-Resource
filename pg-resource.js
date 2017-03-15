@@ -42,11 +42,8 @@
 				//function to map the qdata and urldata to url with query to be used in get methods
 				function buildqUrl(urlData,qData){
 					var qUrl = buildUrl(urlData);
-					
-					var keys = qData.keys;
-					keys= keys.trim();
-					
-					keys = keys.split(":");
+					if(!qData){return qUrl;}
+					var keys = Object.keys(qData);
 					var qString = "?";
 					for(var x in keys){
 						if(x==0){qString = qString+ keys[x]+"=" + qData[keys[x]];}
