@@ -68,7 +68,7 @@
 				},
 				//This will update the data of resource with given id
 				update: function(urlData,data){
-					return $http.patch(buildUrl(urlData),data);
+					return $http.put(buildUrl(urlData),data);
 				},
 				//This will create the classroom
 				create: function(urlData,data){
