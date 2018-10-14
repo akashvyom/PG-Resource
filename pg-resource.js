@@ -55,28 +55,28 @@
 				
 			return {
 				//Defining http service for all
-				all: function(urlData){
-					return $http.get(buildUrl(urlData));
+				all: function(urlData,config={}){
+					return $http.get(buildUrl(urlData),config);
 				},
 				//This will return the data of a given id
-				find: function(urlData){
-					return $http.get(buildUrl(urlData));
+				find: function(urlData,config={}){
+					return $http.get(buildUrl(urlData),config);
 				},
 				//This will process the data with query string
-				qfind: function(urlData,qData){
-					return $http.get(buildqUrl(urlData,qData));
+				qfind: function(urlData,qData,config={}){
+					return $http.get(buildqUrl(urlData,qData),config);
 				},
 				//This will update the data of resource with given id
-				update: function(urlData,data){
-					return $http.put(buildUrl(urlData),data);
+				update: function(urlData,data,config={}){
+					return $http.put(buildUrl(urlData),data,config);
 				},
 				//This will create the classroom
-				create: function(urlData,data){
-					return $http.post(buildUrl(urlData),data);
+				create: function(urlData,data,config={}){
+					return $http.post(buildUrl(urlData),data,config);
 				},
 				//To delete the data
-				destroy: function(urlData){
-					return $http.delete(buildUrl(urlData));
+				destroy: function(urlData,config={}){
+					return $http.delete(buildUrl(urlData),config);
 				}
 			};
 		}
