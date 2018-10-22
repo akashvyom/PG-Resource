@@ -7,10 +7,13 @@
 	}])
 	.factory('Resource',['$http','$q','ApiConfig',function($http,$q,ApiConfig){
 		return{
-			create: function(url,withBase){
+			create: function(url,withBase,baseUrl){
 				//Default Initialize as true
 				if(typeof withBase == "undefined"){
 					withBase = true;
+				}
+				if(typeof baseUrl == "undefined"){
+					baseUrl = ApiConfig.baseUrl;
 				}
 				//break the url in array at every /(backlash)
 				var finalUrlC = url.trim();
@@ -32,9 +35,9 @@
 						}
 					}
 					finalUrl= finalUrl.replace(":id","");
-					if(withBase){
-						finalUrl = ApiConfig.baseUrl + finalUrl; 
-					}
+					//if(withBase){
+						finalUrl = baseUrl + finalUrl; 
+					//}
 					return finalUrl;
 					
 				}
